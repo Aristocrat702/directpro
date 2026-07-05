@@ -1,0 +1,125 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 20px 0;
+  background: rgba(5,5,7,0.5);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid transparent;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.header.scrolled {
+  background: rgba(5,5,7,0.9);
+  border-bottom-color: rgba(255,255,255,0.06);
+  padding: 12px 0;
+}
+.inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 24px;
+  color: var(--gold);
+  letter-spacing: 0.02em;
+  transition: all 0.4s ease;
+}
+.logo:hover {
+  text-shadow: 0 0 30px rgba(200,166,77,0.3);
+  transform: scale(1.02);
+}
+.nav {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+.nav a {
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  position: relative;
+  transition: color 0.3s;
+}
+.nav a:hover {
+  color: var(--gold);
+}
+.nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  width: 0;
+  height: 1.5px;
+  background: var(--gold);
+  transition: all 0.3s;
+  transform: translateX(-50%);
+}
+.nav a:hover::after {
+  width: 80%;
+}
+.nav a:last-child {
+  padding: 8px 20px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  backdrop-filter: blur(4px);
+}
+.nav a:last-child::after {
+  display: none;
+}
+.nav a:last-child:hover {
+  border-color: var(--gold);
+  background: rgba(200,166,77,0.08);
+}
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.burger span {
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+.burger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+.burger.active span:nth-child(2) {
+  opacity: 0;
+}
+.burger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+@media (max-width: 768px) {
+  .burger { display: flex; }
+  .nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 24px;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    gap: 20px;
+  }
+  .nav.open {
+    display: flex;
+  }
+  .nav a {
+    font-size: 17px;
+  }
+}

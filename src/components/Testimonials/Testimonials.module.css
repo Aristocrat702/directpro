@@ -1,0 +1,41 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+.test-card {
+  padding: 32px 24px;
+  position: relative;
+  transition: all 0.4s ease;
+}
+.test-card:hover {
+  border-color: var(--gold);
+}
+.quote {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  font-size: 48px;
+  color: var(--gold);
+  opacity: 0.1;
+  font-family: Georgia, serif;
+}
+.text {
+  font-size: 17px;
+  font-style: italic;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  font-weight: 400;
+}
+.author {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.02em;
+}
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

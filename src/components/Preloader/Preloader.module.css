@@ -1,0 +1,54 @@
+.preloader {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;
+  animation: fadeOut 1.2s ease forwards;
+  animation-delay: 0.8s;
+}
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 64px;
+  color: var(--gold);
+  letter-spacing: 0.04em;
+  opacity: 0;
+  animation: logoAppear 0.8s ease forwards;
+}
+.line {
+  width: 60px;
+  height: 2px;
+  background: var(--gold);
+  margin-top: 20px;
+  opacity: 0;
+  animation: lineAppear 0.6s ease forwards;
+  animation-delay: 0.3s;
+}
+.glow {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(200,166,77,0.1), transparent 70%);
+  filter: blur(40px);
+  animation: pulseGlow 1.5s ease-in-out infinite alternate;
+}
+@keyframes logoAppear {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes lineAppear {
+  from { opacity: 0; transform: scaleX(0); }
+  to { opacity: 1; transform: scaleX(1); }
+}
+@keyframes pulseGlow {
+  0% { transform: scale(0.8); opacity: 0.5; }
+  100% { transform: scale(1.2); opacity: 1; }
+}
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
+}

@@ -1,0 +1,39 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+}
+.advantage-item {
+  padding: 28px 20px;
+  text-align: center;
+  transition: all 0.4s ease;
+}
+.advantage-item:hover {
+  border-color: var(--gold);
+}
+.advantage-item i {
+  font-size: 32px;
+  color: var(--gold);
+  margin-bottom: 12px;
+  display: inline-block;
+  transition: transform 0.8s ease;
+}
+.advantage-item:hover i {
+  transform: rotate(360deg) scale(1.05);
+}
+.advantage-item h3 {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-bottom: 6px;
+}
+.advantage-item p {
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.6;
+}
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

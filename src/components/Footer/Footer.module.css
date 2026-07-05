@@ -1,0 +1,79 @@
+.footer {
+  padding: 48px 0 24px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  background: var(--bg-secondary);
+}
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+.brand {
+  text-align: center;
+}
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 32px;
+  color: var(--gold);
+  letter-spacing: 0.02em;
+  display: inline-block;
+  text-shadow: 0 0 20px rgba(200,166,77,0.15);
+}
+.brand p {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-top: 4px;
+}
+.social {
+  display: flex;
+  gap: 12px;
+}
+.social a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  color: var(--text-secondary);
+}
+.social a:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: translateY(-3px);
+}
+.contacts {
+  display: flex;
+  gap: 24px;
+}
+.contacts a {
+  color: var(--text-secondary);
+  font-size: 14px;
+  transition: 0.2s;
+}
+.contacts a:hover {
+  color: var(--gold);
+}
+.bottom {
+  width: 100%;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 13px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+@media (max-width: 768px) {
+  .inner {
+    gap: 20px;
+  }
+  .contacts {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
